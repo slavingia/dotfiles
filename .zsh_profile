@@ -12,15 +12,14 @@ PATH=/usr/local/mysql/lib:${PATH}
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 
 alias gumroad='cd ~/Desktop/gumroad/web'
-alias vs='vagrant up && vagrant ssh'
-alias zs='rm .zeus.sock; zeus start'
+alias vs='gumroad && vagrant up && vagrant ssh'
+alias zs='vs && rm .zeus.sock; zeus start'
 alias g='git status'
+alias gl='git pull --rebase'
+
 function gc() {
   git commit -v -a -m "$*"
 }
-alias gd='git diff'
-alias gl='git pull --rebase'
-alias gp='git push'
 
 function subl() {
   ~/bin/subl "$*"
